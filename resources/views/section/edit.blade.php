@@ -1,30 +1,30 @@
 @extends('templates.main')
-
 @section('content')
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Halaman Edit Kelas</h1>
+        <h1 class="h3 mb-0 text-gray-800">Edit Data Section</h1>
     </div>
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Form Kelas</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Form Data Section</h6>
         </div>
         <div class="card-body">
-            <form action="">
+            <form action="/data-section/update/{{ $section->id }}" method="post">
+                @csrf
                 <div class="row">
                     <div class="col-6 mb-3">
-                        <label for="nama">Nama:</label>
-                        <input type="text" class="form-control" id="nama" name="nama"
-                            placeholder="Masukkan Nama">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name"
+                            placeholder="Enter name section" value="{{ $section->name }}">
                     </div>
                     <div class="col-6 mb-3">
-                        <label for="kompetensi_keahlian">Kompetensi Keahlian:</label>
-                        <input type="text" class="form-control" id="kompetensi_keahlian" name="kompetensi_keahlian"
-                            placeholder="Masukkan Kompetensi Keahlian">
+                        <label for="description">Description:</label>
+                        <input type="text" class="form-control" id="description" name="description"
+                            placeholder="Enter description section" value="{{ $section->description }}">
                     </div>
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary">Edit Kelas</button>
-                        <a href="/api/kelas" class="btn btn-secondary">Halaman Kelas</a>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <a href="/data-section" class="btn btn-secondary">Back to Page</a>
                     </div>
                 </div>
             </form>

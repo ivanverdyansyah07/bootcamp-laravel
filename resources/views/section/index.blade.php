@@ -6,6 +6,17 @@
         <a href="data-section/create" class="btn btn-primary">Create Data Section</a>
     </div>
 
+    @if (session()->has('success'))
+        <div class="alert alert-success mb-4" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
+    @if (session()->has('failed'))
+        <div class="alert alert-danger mb-4" role="alert">
+            {{ session('failed') }}
+        </div>
+    @endif
+
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Data Section Now!</h6>

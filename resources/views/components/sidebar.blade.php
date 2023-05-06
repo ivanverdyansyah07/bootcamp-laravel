@@ -18,10 +18,12 @@
             <span>Dashboard</span></a>
     </li>
 
-    <li class="nav-item {{ Request::is('data-section*') ? 'active' : '' }}">
-        <a class="nav-link" href="/data-section">
-            <i class="fa-regular fa-file-lines"></i>
-            <span>Data Section</span></a>
-    </li>
+    @if (auth()->user()->role === 'admin')
+        <li class="nav-item {{ Request::is('data-section*') ? 'active' : '' }}">
+            <a class="nav-link" href="/data-section">
+                <i class="fa-regular fa-file-lines"></i>
+                <span>Data Section</span></a>
+        </li>
+    @endif
 </ul>
 <!-- End of Sidebar -->

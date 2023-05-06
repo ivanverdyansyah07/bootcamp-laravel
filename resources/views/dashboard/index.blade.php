@@ -11,7 +11,7 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 </div>
                 <div class="card-body">
-                    <h1>Selamat Datang</h1>
+                    <h1>Selamat Datang {{ auth()->user()->username }}</h1>
                 </div>
             </div>
         </div>

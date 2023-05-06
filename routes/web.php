@@ -26,9 +26,9 @@ Route::controller(SectionController::class)->group(function () {
     Route::get('data-section', 'index');
     Route::get('data-section/create', 'create');
     Route::post('data-section/create', 'store');
-    Route::get('data-section/edit', 'edit');
+    Route::get('data-section/edit/{id}', 'edit');
     Route::post('data-section/update/{id}', 'update');
-    Route::post('data-section/delete/{id}', 'delete');
+    Route::post('data-section/delete/{id}', 'destroy');
 });
 
 Route::controller(LoginController::class)->group(function () {
