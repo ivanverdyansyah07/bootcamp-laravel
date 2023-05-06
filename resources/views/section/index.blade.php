@@ -22,19 +22,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1.</td>
-                            <td>XII RPL 1</td>
-                            <td>Rekayasa Perangkat Lunak</td>
-                            <td>
-                                <a href="data-section/edit" class="btn btn-warning btn-sm">
-                                    <i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i>
-                                </a>
-                                <a href="" class="btn btn-danger btn-sm">
-                                    <i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>
-                                </a>
-                            </td>
-                        </tr>
+                        @foreach ($sections as $section)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $section->name }}</td>
+                                <td>{{ $section->description }}</td>
+                                <td>
+                                    <a href="data-section/edit/{{ $section->id }}" class="btn btn-warning btn-sm">
+                                        <i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i>
+                                    </a>
+                                    <form action="data-section/delete/{{ $section->id }}" method="post"
+                                        class="d-inline-block">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger btn-sm">
+                                            <i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

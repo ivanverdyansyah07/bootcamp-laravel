@@ -10,7 +10,8 @@
             <h6 class="m-0 font-weight-bold text-primary">Form Data Section</h6>
         </div>
         <div class="card-body">
-            <form action="">
+            <form action="/data-section/create" method="post">
+                @csrf
                 <div class="row">
                     <div class="col-6 mb-3">
                         <label for="name">Name:</label>
