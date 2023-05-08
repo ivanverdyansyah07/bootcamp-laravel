@@ -24,6 +24,12 @@
                 <i class="fa-regular fa-file-lines"></i>
                 <span>Data Section</span></a>
         </li>
+
+        <li class="nav-item {{ Request::is('setting*') ? 'active' : '' }}">
+            <a class="nav-link" href="/setting">
+                <i class="fa-solid fa-gear"></i>
+                <span>Setting</span></a>
+        </li>
     @endif
 </ul>
 <!-- End of Sidebar -->

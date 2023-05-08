@@ -18,6 +18,12 @@
     <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/fontawesome.min.css') }}" rel="stylesheet">
 
+    <style>
+        .wrapper-navigation::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
 </head>
 
 <body id="page-top">
